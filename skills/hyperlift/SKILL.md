@@ -7,6 +7,10 @@ description: >-
   resource metrics, read or update environment variables, restart an
   application, or start/stop (scale) an application. Do not use for EasyWP,
   Supersonic CDN, domains, DNS, or other Spaceship services.
+license: MIT
+compatibility: Requires Python 3.10+ and network access to spaceship.dev
+metadata:
+  author: NCCloud
 ---
 
 # Hyperlift

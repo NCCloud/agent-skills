@@ -20,16 +20,6 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Run Hyperlift skill tests
         run: python -m unittest discover -s skills/hyperlift/tests -v
-      - name: Validate skill metadata
+      - name: Validate skills against the Agent Skills spec
         run: |
-          python - <<'EOF'
-          import pathlib, re, sys
-          for skill_md in pathlib.Path("skills").glob("*/SKILL.md"):
-              text = skill_md.read_text()
-              match = re.match(r"^---\n(.*?)\n---\n", text, re.DOTALL)
-              assert match, f"{skill_md}: missing frontmatter"
-              front = match.group(1)
-              assert re.search(r"^name:\s*\S+", front, re.M), f"{skill_md}: missing name"
-              assert re.search(r"^description:\s*\S+", front, re.M), f"{skill_md}: missing description"
-              print(f"ok: {skill_md}")
-          EOF
+          for skill in skills/*/; do npx -y skills-ref validate "$skill"; done
