@@ -22,5 +22,4 @@ jobs:
         run: python -m unittest discover -s skills/hyperlift/tests -v
       - name: Validate skills against the Agent Skills spec
         run: |
-          pip install --quiet skills-ref
-          for skill in skills/*/; do skills-ref validate "$skill"; done
+          for skill in skills/*/; do npx -y skills-ref validate "$skill"; done
