@@ -1,10 +1,10 @@
-# Namecheap Cloud Agent Skills
+# Spaceship Agent Skills
 
-Standalone [Agent Skills](https://agentskills.io) for managing Namecheap Cloud
+Standalone [Agent Skills](https://agentskills.io) for managing Spaceship
 products.
 
 Currently this repository provides one skill — **Hyperlift**. Skills for other
-Namecheap Cloud products (EasyWP, Supersonic CDN) may be added later under the
+Spaceship products (EasyWP, Supersonic CDN) may be added later under the
 same layout.
 
 ```
